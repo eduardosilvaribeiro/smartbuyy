@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>SmartBuy - Compre Inteligente</title>
+</head>
+<body>
+    <style>
+        * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    flex: 1; /* Faz o container ocupar todo o espaço */
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background: #eeff02;
+    color: #000000;
+    padding: 20px;
+    text-align: center;
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+nav {
+    margin: 10px 0;
+}
+
+.tab-link {
+    margin: 0 15px;
+    cursor: pointer;
+    color: #000000;
+    font-weight: bold;
+}
+
+h1 {
+    margin: 10px 0;
+    font-size: 24px;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+main {
+    flex: 1; /* Faz o main ocupar o espaço restante */
+    padding: 20px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #000000;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 20px;
+}
+
+.product-item {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.product-item:hover {
+    transform: scale(1.05);
+    border-color: #eeff02;
+}
+
+.product-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.tab-content {
+    display: none;
+    background: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#store {
+    display: block; /* Exibe a loja por padrão */
+}
+
+input#login-tab:checked ~ #login,
+input#register-tab:checked ~ #register {
+    display: block;
+}
+
+input#login-tab:checked ~ #store,
+input#register-tab:checked ~ #store {
+    display: none;
+}
+
+form {
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="text"]:focus {
+    border-color: #eeff02;
+}
+
+button {
+    background: #000000;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background: #000000;
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background: #eeff02;
+    color: #000000;
+    width: 100%;
+}
+
+    </style>
+    <header>
+        <div class="logo">SmartBuy</div>
+        <h1>Compre inteligente, compre com SmartBuy</h1>
+        <nav>
+            <label for="login-tab" class="tab-link">Login</label>
+            <label for="register-tab" class="tab-link">Cadastro</label>
+            <label for="store-tab" class="tab-link active">Loja</label>
+        </nav>
+    </header>
+
+    <main>
+        <input type="radio" id="login-tab" name="tab" class="tab">
+        <input type="radio" id="register-tab" name="tab" class="tab">
+        <input type="radio" id="store-tab" name="tab" class="tab" checked>
+
+        <section id="store" class="tab-content">
+            <h2>Loja</h2>
+            <div class="products">
+                <div class="product-item">
+                    <img src="material de limpeza.jpg" alt="Produto 1">
+                    <h3>kit de limpeza profunda</h3>
+                    <p>contem diversos produtos de limpeza.</p>
+                    <p>Preço: R$ 100,00</p>
+                </div>
+                <div class="product-item">
+                    <img src="exisboquicis.jpg" alt="Produto 2">
+                    <h3>xbox classico</h3>
+                    <p>primeiro xbox.</p>
+                    <p>Preço: R$ 200,00</p>
+                </div>
+                <div class="product-item">
+                    <img src="pula pula.jpg" alt="Produto 3">
+                    <h3>Pula pula</h3>
+                    <p>pula pula para festas.</p>
+                    <p>Preço: R$ 150,00</p>
+                </div>
+                <div class="product-item">
+                    <img src="cartão presente steam 80 reais.jpg" alt="Produto 4">
+                    <h3>giftcard 80,00R$</h3>
+                    <p>Descrição do produto 4.</p>
+                    <p>Preço: R$ 80,00</p>
+                </div>
+                <div class="product-item">
+                    <img src="vassouras fodas.jpg" alt="Produto 5">
+                    <h3>vassouras</h3>
+                    <p>kite de 100 vassouras</p>
+                    <p>Preço: R$ 300,00</p>
+                </div>
+                <div class="product-item">
+                    <img src="ps5.jpg" alt="Produto 6">
+                    <h3>Play station 5</h3>
+                    <p>console original.</p>
+                    <p>Preço: R$ 120,00</p>
+                </div>
+                <div class="product-item">
+                    <img src="caderno tilibra.jpg" alt="Produto 7">
+                    <h3>caderdo tilibra</h3>
+                    <p>foto das olimpiadas 2024.</p>
+                    <p>Preço: R$ 250,00</p>
+                </div>
+                <div class="product-item">
+                    <img src="bmw.jpg" alt="Produto 8">
+                    <h3>BMW</h3>
+                    <p>carro original, 0km, feito no alabama.</p>
+                    <p>Preço: R$ 90,00</p>
+                </div>
+                <div class="product-item">
+                    <img src="urso foda-se.jpg" alt="Produto 9">
+                    <h3>urso de pelucia</h3>
+                    <p>urso daora e legal.</p>
+                    <p>Preço: R$ 110000,00</p>
+                </div>
+                <div class="product-item">
+                    <img src="renata.jpg" alt="Produto 10">
+                    <h3>macarrão da renata</h3>
+                    <p>feito pela renata.</p>
+                    <p>Preço: R$ 60,00</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="login" class="tab-content">
+            <h2>Login</h2>
+            <form>
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" required>
+                <label for="password">Senha:</label>
+                <input type="password" id="password" required>
+                <button type="submit">Entrar</button>
+            </form>
+        </section>
+
+        <section id="register" class="tab-content">
+            <h2>Cadastro</h2>
+            <form>
+                <label for="name">Nome:</label>
+                <input type="text" id="name" required>
+                <label for="email-register">E-mail:</label>
+                <input type="email" id="email-register" required>
+                <label for="password-register">Senha:</label>
+                <input type="password" id="password-register" required>
+                <button type="submit">Cadastrar</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 SmartBuy</p>
+    </footer>
+</body>
+</html>
